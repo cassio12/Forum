@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Forum</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<main>  
+  <section class="comentarios">
+      <h2 class="comentarios-titulo">Comentários</h2>
+      <input class="comentarios-input" 
+        v-model="novoComentario"
+        placeholder='Digite seu comentário'
+        v-on:keyup.enter="comentar">
+      <button class="comentarios-button" v-on:click="comentar">Enviar</button>
+      <ul>
+        <li class='comentario' v-for='usuario in usuarios'>
+          <img class='comentario-avatar' src='./assets/profile.png'/>
+          <div class='comentario-container'>
+            <h3 class='comentario-titulo'>{{usuario.nome}}</h3>
+            <p class='comentario-texto'>{{usuario.mensagem}}</p>
+          </div>
+        </li>
+      </ul>
+  </section>
+</main>
+</body>
+<footer>
+</footer>
+</html>
